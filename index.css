@@ -1,0 +1,92 @@
+body {
+	text-align: center;
+	background-color: black;
+	color: white;
+}
+
+h3 {
+	position: absolute;
+	width: 100%;
+}
+
+#menu {
+	position: absolute;
+	height: 75%;
+	top: 10%;
+	bottom: 10%;
+	left: 10%;
+	width: 80%;
+	z-index: 1;
+	border: 5px solid white;
+	background-color: white;
+}
+
+#button {
+	position: absolute;
+}
+
+#triforce-left {
+	position: absolute;
+	width: 20%;
+	top: 5%;
+	left: 30%;
+	right: 50%;
+}
+
+#triforce-right {
+	position: absolute;
+	width: 20%;
+	top: 5%;
+	left: 50%;
+	right: 20%;
+}
+
+.instrument_div {
+	position: relative;
+	display: inline-block;
+	width: 33.33%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.instrument_div img{
+	margin-top: 50%;
+	width: 50%;
+}
+
+.instrument_div img:hover {
+	width: 60%;
+}
+
+#instrument_div_left {
+	background-color: #000080;
+}
+
+#instrument_div_right {
+	background-color: brown;
+}
+
+#instrument_div_middle {
+	background-color: green;
+}
+
+.you_choose {
+	position: relative;
+	width: 80%;
+	margin: 5%;
+	border: 5px solid white; 
+	padding-top: 20%;
+	padding-bottom: 20%;
+}
+
+#navi {
+	position: absolute;
+	bottom: 0;
+	left: 25%;
+	right: 25%;
+	width: 50%;
+}
+
+#navi_img {
+	width: 20%;
+}
