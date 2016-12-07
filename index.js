@@ -1,21 +1,10 @@
-aactivate_triforce = 0;
 function Menu() {
-	if (aactivate_triforce == 0) {
-	   	$("#triforce-left").animate({left: '-=10%'});
-	   	$("#triforce-right").animate({left: '+=10%'});
-	   	var audio = new Audio('ressources/secret.wav');
-		audio.play();
-		aactivate_triforce = 1;
-		var button = document.getElementById('div_button');
-		button.innerHTML = "";
-		setTimeout(displayMenu, 500);
-	}
-	else if (aactivate_triforce == 1)
-	{
-   		$("#triforce-left").animate({left: '+=10%'});
-   		$("#triforce-right").animate({left: '-=10%'});
-		aactivate_triforce = 0;
-	}
+   	$("#triforce-left").animate({left: '-=10%'});
+   	$("#triforce-right").animate({left: '+=10%'});
+   	var audio = new Audio('ressources/secret.wav');
+	audio.play();
+
+	setTimeout(displayMenu, 500);
 }
 
 function displayMenu() {
@@ -32,6 +21,8 @@ function displayMenu() {
 }
 
 function nameInstrument(name) {
+	var audio = new Audio('ressources/TP_PauseMenu_Cursor1.wav');
+	audio.play();
 	var div = document.getElementById('nameInstrument');
 	if (name == 1)
 		div.innerHTML = 'Baguette';
@@ -44,19 +35,44 @@ function nameInstrument(name) {
 }
 
 function choose_ocarina() {
-	console.log('You choose Ocarina');
+	var audio = new Audio('ressources/TP_SaveMenu_SlotSelect.wav');
+	audio.play();
 	var body = document.querySelector('body');
-	body.innerHTML = '<div class="you_choose">You have chosen the Ocarina<div id="navi"><img id="ressources/navi_img" src="ressources/navi.jpeg"><span>Continue<span></div></div>';
+	body.innerHTML = '<div class="you_choose" onclick="ocarina()">You have chosen the Ocarina<div id="navi"><img id="navi_img" src="ressources/navi.png"><span>Continue<span></div></div>';
 }
-	console.log('You choose Harp');
 
 function choose_harp() {
+	var audio = new Audio('ressources/TP_SaveMenu_SlotSelect.wav');
+	audio.play();
 	var body = document.querySelector('body');
-	body.innerHTML = '<div class="you_choose">You have chosen the Harp</div>';
+	body.innerHTML = '<div class="you_choose" onclick="harp()">You have chosen the Harp<div id="navi"><img id="navi_img" src="ressources/navi.png"><span>Continue<span></div></div>';
 }
 
 function choose_wand() {
-	console.log('You choose Wand');
+	var audio = new Audio('ressources/TP_SaveMenu_SlotSelect.wav');
+	audio.play();
 	var body = document.querySelector('body');
-	body.innerHTML = '<div class="you_choose">You have chosen the Wand</div>';
+	body.innerHTML = '<div class="you_choose" onclick="wand()">You have chosen the Wand<div id="navi"><img id="navi_img" src="ressources/navi.png"><span>Continue<span></div></div>';
+}
+
+function ocarina() {
+	var audio = new Audio('ressources/TP_SaveMenu_SlotSelect.wav');
+	audio.play();
+	console.log('Ocarina');
+	var body = document.querySelector('body');
+	body.innerHTML = '<div class="you_choose">' +
+	'<span onclick="window.location.reload()">Revenir au menu de départ</span>' + 
+	'</div>';
+}
+
+function wand() {
+	var audio = new Audio('ressources/TP_SaveMenu_SlotSelect.wav');
+	audio.play();
+	console.log('Wand');
+}
+
+function harp() {
+	var audio = new Audio('ressources/TP_SaveMenu_SlotSelect.wav');
+	audio.play();
+	console.log('Harp');
 }

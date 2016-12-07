@@ -82,11 +82,21 @@ h3 {
 #navi {
 	position: absolute;
 	bottom: 0;
-	left: 25%;
-	right: 25%;
-	width: 50%;
+	left: 40%;
+	right: 40%;
+	width: 20%;
+	text-align: left;
+}
+
+#navi:hover {
+	border: 3px solid white;
 }
 
 #navi_img {
-	width: 20%;
+	width: 50%;
+}
+
+#navi span {
+	position: absolute;
+	top: 50%;
 }
