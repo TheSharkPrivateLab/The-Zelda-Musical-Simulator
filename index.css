@@ -72,11 +72,9 @@ h3 {
 
 .you_choose {
 	position: relative;
-	width: 80%;
+	border: 5px solid white;
 	margin: 5%;
-	border: 5px solid white; 
-	padding-top: 20%;
-	padding-bottom: 20%;
+	height:70vh; 
 }
 
 #navi {
@@ -99,4 +97,45 @@ h3 {
 #navi span {
 	position: absolute;
 	top: 50%;
+}
+
+#you_have_chosen {
+	position: absolute;
+	top: 50%;
+}
+
+.navbar {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-top: 3px solid white;
+}
+
+#quit {
+	width: 48%;
+	display: inline-block;
+	padding: 5px;	
+}
+
+#quit:hover {
+	font-weight: bold;
+}
+
+.gamescreen {
+	position: absolute;
+	width: 100%;
+}
+
+#sheets {
+	width: 40%;
+}
+
+#navbar_sheets {
+	width: 48%;
+	display: inline-block;
+	padding: 5px;
+}
+
+#navbar_sheets:hover {
+	font-weight: bold;
 }
