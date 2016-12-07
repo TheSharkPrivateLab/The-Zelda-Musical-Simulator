@@ -124,10 +124,11 @@ h3 {
 .gamescreen {
 	position: absolute;
 	width: 100%;
+	height: 65vh;
 }
 
 #sheets {
-	width: 40%;
+	width: 60%;
 }
 
 #navbar_sheets {
@@ -138,4 +139,15 @@ h3 {
 
 #navbar_sheets:hover {
 	font-weight: bold;
+}
+
+.ocarina_staff_div {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+
+.ocarina_staff {
+	width: 100%;
 }
