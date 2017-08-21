@@ -6,13 +6,12 @@ function Menu() {
     $("#triforce-right").animate({left: '+=10%'});
     var audio = new Audio('ressources/secret.wav');
     audio.play();
-
     setTimeout(displayMenu, 500);
 }
 
 function displayMenu() {
-    var Menu = document.getElementById('contain_menu')
-    menu = document.createElement('div');
+    var Menu = $("#contain_menu");
+    var menu = document.createElement('div');
     menu.id = 'menu';
     Menu.appendChild(menu);
     var Ocarina = 'Ocarina';
