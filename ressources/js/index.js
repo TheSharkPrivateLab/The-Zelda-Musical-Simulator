@@ -1,17 +1,8 @@
 //Menus
 
-function Menu() {
-    var first_body = $("body").html();
-    $("#triforce-left").animate({left: "-=10%"});
-    $("#triforce-right").animate({left: "+=10%"});
-    var audio = new Audio("ressources/audio/secret.wav");
-    audio.play();
-    setTimeout(displayMenu, 500);
-}
-
 function displayMenu() {
     var Menu = $("#contain_menu");
-    menu = document.createElement("div");
+    var menu = document.createElement("div");
     menu.id = "menu";
     Menu.append(menu);
     var Ocarina = "Ocarina";
@@ -22,8 +13,19 @@ function displayMenu() {
         "<div class=\"instrument_div\" id=\"instrument_div_right\"><img id=\"harp\" src=\"ressources/img/harp.png\" onmouseover=\"nameInstrument(3)\" onclick=\"choose_harp()\"></div>";
 }
 
+function Menu() {
+    var first_body = $("body").html();
+    $("#triforce-left").animate({left: "-=10%"});
+    $("#triforce-right").animate({left: "+=10%"});
+    var audio = new Audio("ressources/audio/secret.wav");
+    audio.play();
+    setTimeout(displayMenu, 500);
+}
+
+
+
 function nameInstrument(name) {
-    var audio = new Audio('ressources/audio/TP_PauseMenu_Cursor1.wav');
+    var audio = new Audio("ressources/audio/TP_PauseMenu_Cursor1.wav");
     audio.play();
     var div = $("#nameInstrument");
     switch (name) {
@@ -59,7 +61,7 @@ function choose_wand() {
 
 function quit() {
     window.removeEventListener("keydown", play_ocarina);
-    var span = document.getElementById('quit');
+    var span = document.getElementById("quit");
     $("#quit").html("<span>Return to title screen</span>");
     var audio = new Audio("ressources/audio/TP_SaveMenu_Continue_No.wav");
     audio.play();
@@ -74,7 +76,7 @@ function restore() {
 
 function display_sheets_ocarina() {
     window.removeEventListener("keydown", play_ocarina);
-    var audio = new Audio('ressources/audio/TP_SaveMenu_SlotSelect.wav');
+    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
     audio.play();
     var screen = document.getElementById('gamescreen');
     screen.innerHTML = '<img id="sheets" src="ressources/img/ocarina_sheets.jpg">';
@@ -93,9 +95,9 @@ function display_sheets_harp() {
 //Instruments
 
 function ocarina() {
-    var audio = new Audio('ressources/audio/TP_SaveMenu_SlotSelect.wav');
+    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
     audio.play();
-    var body = document.querySelector('body');
+    var body = document.querySelector("body");
     body.innerHTML = '<div class="you_choose">' +
         '<div class="gamescreen" id="gamescreen">' +
         '<div class="ocarina_staff_div">' +
@@ -114,7 +116,7 @@ function ocarina() {
 }
 
 function wand() {
-    var audio = new Audio('ressources/audio/TP_SaveMenu_SlotSelect.wav');
+    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
     audio.play();
     var body = document.querySelector('body');
     body.innerHTML = '<div class="you_choose">' +
@@ -128,9 +130,9 @@ function wand() {
 }
 
 function harp() {
-    var audio = new Audio('ressources/audio/TP_SaveMenu_SlotSelect.wav');
+    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
     audio.play();
-    var body = document.querySelector('body');
+    var body = document.querySelector("body");
     body.innerHTML = '<div class="you_choose">' +
         '<div class="gamescreen" id="gamescreen">' +
         '</div>' +
@@ -147,7 +149,7 @@ function play_ocarina(event) {
     }
     switch (event.key) {
         case "ArrowDown":
-            var audio = new Audio('ressources/audio/OOT_Notes_Ocarina_Down.wav');
+            var audio = new Audio("ressources/audio/OOT_Notes_Ocarina_Down.wav");
             audio.play();
             song[i] = "down";
             i++;
@@ -155,7 +157,7 @@ function play_ocarina(event) {
             test_song();
             break;
         case "ArrowUp":
-            var audio = new Audio('ressources/audio/OOT_Notes_Ocarina_Up.wav');
+            var audio = new Audio("ressources/audio/OOT_Notes_Ocarina_Up.wav");
             audio.play();
             song[i] = "up";
             i++;
@@ -163,7 +165,7 @@ function play_ocarina(event) {
             test_song();
             break;
         case "ArrowLeft":
-            var audio = new Audio('ressources/audio/OOT_Notes_Ocarina_Left.wav');
+            var audio = new Audio("ressources/audio/OOT_Notes_Ocarina_Left.wav");
             audio.play();
             song[i] = "left";
             i++;
@@ -171,7 +173,7 @@ function play_ocarina(event) {
             test_song();
             break;
         case "ArrowRight":
-            var audio = new Audio('ressources/OOT_Notes_Ocarina_Right.wav');
+            var audio = new Audio("ressources/OOT_Notes_Ocarina_Right.wav");
             audio.play();
             song[i] = "right";
             i++;
@@ -179,7 +181,7 @@ function play_ocarina(event) {
             test_song();
             break;
         case " ":
-            var audio = new Audio('ressources/audio/OOT_Notes_Ocarina_A.wav');
+            var audio = new Audio("ressources/audio/OOT_Notes_Ocarina_A.wav");
             audio.play();
             song[i] = "a";
             i++;
@@ -196,42 +198,42 @@ function test_song() {
     if (song[0] == "down" && song[1] == "right" && song[2] == "left" &&
         song[3] == "down" && song[4] == "right" && song[5] == "left" && i == 6)
     {
-        var audio = new Audio('ressources/audio/z5_ChantSaria.mp3');
+        var audio = new Audio("ressources/audio/z5_ChantSaria.mp3");
         audio.play();
         console.log("Saria's song");
     }
     else if (song[0] == "left" && song[1] == "up" && song[2] == "right" && 
         song[3] == "left" && song[4] == "up" && song[5] == "right" && i == 6)
     {
-        var audio = new Audio('ressources/audio/z5_BerceuseZelda.mp3');
+        var audio = new Audio("ressources/audio/z5_BerceuseZelda.mp3");
         audio.play();
         console.log("Zelda's Lullaby");
     }
     else if (song[0] == "right" && song[1] == "down" && song[2] == "up" && 
         song[3] == "right" && song[4] == "down" && song[5] == "up" && i == 6)
     {
-        var audio = new Audio('ressources/audio/z5_ChantSoleil.mp3');
+        var audio = new Audio("ressources/audio/z5_ChantSoleil.mp3");
         audio.play();
         console.log("Sun's Song");
     }
     else if (song[0] == "a" && song[1] == "down" && song[2] == "up" && 
         song[3] == "a" && song[4] == "down" && song[5] == "up" && i == 6)
     {
-        var audio = new Audio('ressources/audio/z5_ChantTempetes.mp3');
+        var audio = new Audio("ressources/audio/z5_ChantTempetes.mp3");
         audio.play();
         console.log("Song of Storms");
     }
     else if (song[0] == "right" && song[1] == "a" && song[2] == "down" && 
         song[3] == "right" && song[4] == "a" && song[5] == "down" && i == 6)
     {
-        var audio = new Audio('ressources/audio/z5_ChantTemps.mp3');
+        var audio = new Audio("ressources/audio/z5_ChantTemps.mp3");
         audio.play();
         console.log("Song of Time");
     }
     else if (song[0] == "up" && song[1] == "left" && song[2] == "right" && 
         song[3] == "up" && song[4] == "left" && song[5] == "right" && i == 6)
     {
-        var audio = new Audio('ressources/audio/z5_ChantEpona.mp3');
+        var audio = new Audio("ressources/audio/z5_ChantEpona.mp3");
         audio.play();
         console.log("Epona's Song");
     }
@@ -241,5 +243,5 @@ function test_song() {
 
 function reset() {
     i = 0;
-    console.log('Reset !');
+    console.log("Reset !");
 }
