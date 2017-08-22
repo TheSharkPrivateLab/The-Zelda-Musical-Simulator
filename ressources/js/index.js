@@ -19,7 +19,9 @@ function Menu() {
     $("#triforce-right").animate({left: "+=10%"});
     var audio = new Audio("ressources/audio/secret.wav");
     audio.play();
-    setTimeout(displayMenu, 500);
+    setTimeout(function () {
+        displayMenu();
+    }, 500);
 }
 
 
@@ -59,6 +61,10 @@ function choose_wand() {
     $("body").html("<div class=\"you_choose\"><span id=\"you_have_chosen\">You have chosen the Wand</span><div id=\"navi\" onclick=\"wand()\"><img id=\"navi_img\" src=\"ressources/navi.png\"><span>Continue</span></div></div>");
 }
 
+function restore() {
+    $("body").html(first_body);
+}
+
 function quit() {
     window.removeEventListener("keydown", play_ocarina);
     var span = document.getElementById("quit");
@@ -70,18 +76,12 @@ function quit() {
     }, 1000);
 }
 
-function restore() {
-    $("body").html(first_body);
-}
-
 function display_sheets_ocarina() {
     window.removeEventListener("keydown", play_ocarina);
     var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
     audio.play();
-    var screen = document.getElementById('gamescreen');
-    screen.innerHTML = '<img id="sheets" src="ressources/img/ocarina_sheets.jpg">';
-    var navbar = document.getElementById('navbar_sheets');
-    navbar.innerHTML = '<div id="navbar_sheets"><span onclick="ocarina()">Return</span></div>';
+    $("#gamescreen").html("<img id=\"sheets\" src=\"ressources/img/ocarina_sheets.jpg\">");
+    $("#navbar_sheets").html("<div id=\"navbar_sheets\"><span onclick=\"ocarina()\">Return</span></div>");
 }
 
 function display_sheets_wand() {
@@ -93,55 +93,6 @@ function display_sheets_harp() {
 }
 
 //Instruments
-
-function ocarina() {
-    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
-    audio.play();
-    var body = document.querySelector("body");
-    body.innerHTML = '<div class="you_choose">' +
-        '<div class="gamescreen" id="gamescreen">' +
-        '<div class="ocarina_staff_div">' +
-        '<img class="ocarina_staff" src="ressources/img/ocarina_staff.png">' +
-        '</div>' +
-        '</div>' +
-        '<div class="navbar">' +
-        '<div id="navbar_sheets"><span onclick="display_sheets_ocarina()">Sheets</span></div>' +
-        '<div id="quit"><span onclick="quit()">Return to title screen</span></div>' +
-        '</div>' +
-        '</div>' +
-        '<div><button onclick="reset()">Reset</button></div>';
-    i = 0;
-    song = [];
-    window.addEventListener("keydown", play_ocarina);
-}
-
-function wand() {
-    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
-    audio.play();
-    var body = document.querySelector('body');
-    body.innerHTML = '<div class="you_choose">' +
-        '<div class="gamescreen" id="gamescreen">' +
-        '</div>' +
-        '<div class="navbar">' +
-        '<div id="navbar_sheets"><span onclick="display_sheets_wand()">Sheets</span></div>' +
-        '<div id="quit"><span onclick="quit()">Return to title screen</span></div>' +
-        '</div>' +
-        '</div>';
-}
-
-function harp() {
-    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
-    audio.play();
-    var body = document.querySelector("body");
-    body.innerHTML = '<div class="you_choose">' +
-        '<div class="gamescreen" id="gamescreen">' +
-        '</div>' +
-        '<div class="navbar">' +
-        '<div id="navbar_sheets"><span onclick="display_sheets_harp()">Sheets</span></div>' +
-        '<div id="quit"><span onclick="quit()">Return to title screen</span></div>' +
-        '</div>' +
-        '</div>';
-}
 
 function play_ocarina(event) {
     if (event.defaultPrevented) {
@@ -192,6 +143,55 @@ function play_ocarina(event) {
             break;
     }
     event.preventDefault();
+}
+
+function ocarina() {
+    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
+    audio.play();
+    var body = document.querySelector("body");
+    $("body").html("<div class=\"you_choose\">" +
+        "<div class=\"gamescreen\" id=\"gamescreen\">" +
+        "<div class=\"ocarina_staff_div\">" +
+        "<img class=\"ocarina_staff\" src=\"ressources/img/ocarina_staff.png\">" +
+        "</div>" +
+        "</div>" +
+        "<div class=\"navbar\">" +
+        "<div id=\"navbar_sheets\"><span onclick=\"display_sheets_ocarina()\">Sheets</span></div>" +
+        "<div id=\"quit\"><span onclick=\"quit()\">Return to title screen</span></div>" +
+        "</div>" +
+        "</div>" +
+        "<div><button onclick=\"reset()\">Reset</button></div>");
+    i = 0;
+    song = [];
+    window.addEventListener("keydown", play_ocarina);
+}
+
+function wand() {
+    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
+    audio.play();
+    var body = document.querySelector("body");
+    body.innerHTML = "<div class=\"you_choose\">" +
+        "<div class=\"gamescreen\" id=\"gamescreen\">" +
+        "</div>" +
+        "<div class=\"navbar\">" +
+        "<div id=\"navbar_sheets\"><span onclick=\"display_sheets_wand()\">Sheets</span></div>" +
+        "<div id=\"quit\"><span onclick=\"quit()\">Return to title screen</span></div>" +
+        "</div>" +
+        "</div>";
+}
+
+function harp() {
+    var audio = new Audio("ressources/audio/TP_SaveMenu_SlotSelect.wav");
+    audio.play();
+    var body = document.querySelector("body");
+    body.innerHTML = "<div class=\"you_choose\">" +
+        "<div class=\"gamescreen\" id=\"gamescreen\">" +
+        "</div>" +
+        "<div class=\"navbar\">" +
+        "<div id=\"navbar_sheets\"><span onclick=\"display_sheets_harp()\">Sheets</span></div>" +
+        "<div id=\"quit\"><span onclick=\"quit()\">Return to title screen</span></div>" +
+        "</div>" +
+        "</div>";
 }
 
 function test_song() {
