@@ -6,10 +6,18 @@
     <link rel="stylesheet" type="text/css" href="ressources/css/index.css">
     <script type="text/javascript" src="ressources/js/index.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script></head>
+    <script>
+        $(document).ready(function () {
+            var song = [];
+            $("#triforce-left, #triforce-right").click(function () {
+                Menu(song);
+            });
+        });
+    </script>
 <body>
     <div id="contain_menu"></div>
-    <img id="triforce-left" src="ressources/img/triforce-left.png" onclick="Menu()">
-    <img id="triforce-right" src="ressources/img/triforce-right.png" onclick="Menu()">
+    <img id="triforce-left" src="ressources/img/triforce-left.png" />
+    <img id="triforce-right" src="ressources/img/triforce-right.png" />
     <audio controls loop autoplay hidden>
   <source src="ressources/audio/z5_FontaineRoyaleFees.mp3" type="audio/mpeg">
 </audio>

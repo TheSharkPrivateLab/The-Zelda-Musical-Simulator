@@ -1,153 +1,149 @@
 body {
-	text-align: center;
-	background-color: black;
-	color: white;
+    text-align: center;
+    background-color: black;
+    color: white;
 }
 
-h3 {
-	position: absolute;
-	width: 100%;
+#nameInstrument {
+    width: 100%;
 }
 
 #menu {
-	position: absolute;
-	height: 75%;
-	top: 10%;
-	bottom: 10%;
-	left: 10%;
-	width: 80%;
-	z-index: 1;
-	border: 5px solid white;
-	background-color: white;
+    position: relative;
+    display: inline-flex;
+    height: 600px;
+    margin: 3% 10% 0 10%;
+    width: 79%;
+    z-index: 1;
+    border: 5px solid white;
+    background-color: white;
 }
 
 #button {
-	position: absolute;
+    position: absolute;
 }
 
 #triforce-left {
-	position: absolute;
-	width: 20%;
-	top: 5%;
-	left: 30%;
-	right: 50%;
+    position: absolute;
+    width: 20%;
+    top: 5%;
+    left: 30%;
+    right: 50%;
 }
 
 #triforce-right {
-	position: absolute;
-	width: 20%;
-	top: 5%;
-	left: 50%;
-	right: 20%;
+    position: absolute;
+    width: 20%;
+    top: 5%;
+    left: 50%;
+    right: 20%;
 }
 
 .instrument_div {
-	position: relative;
-	display: inline-block;
-	width: 33.33%;
-	height: 100%;
-	vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
 }
 
 .instrument_div img{
-	margin-top: 50%;
-	width: 50%;
+    margin-top: 50%;
+    width: 50%;
 }
 
 .instrument_div img:hover {
-	width: 60%;
+    width: 60%;
 }
 
 #instrument_div_left {
-	background-color: #000080;
+    background-color: #000080;
 }
 
 #instrument_div_right {
-	background-color: brown;
+    background-color: brown;
 }
 
 #instrument_div_middle {
-	background-color: green;
+    background-color: green;
 }
 
 .you_choose {
-	position: relative;
-	border: 5px solid white;
-	margin: 5%;
-	height:70vh; 
+    position: relative;
+    border: 5px solid white;
+    margin: 5%;
+    height:70vh; 
 }
 
 #navi {
-	position: absolute;
-	bottom: 0;
-	left: 40%;
-	right: 40%;
-	width: 20%;
-	text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+    right: 40%;
+    width: 20%;
+    text-align: left;
 }
 
 #navi:hover {
-	border: 3px solid white;
+    border: 3px solid white;
 }
 
 #navi_img {
-	width: 50%;
+    width: 50%;
 }
 
 #navi span {
-	position: absolute;
-	top: 50%;
+    position: absolute;
+    top: 50%;
 }
 
 #you_have_chosen {
-	position: absolute;
-	top: 50%;
+    position: absolute;
+    top: 50%;
 }
 
 .navbar {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	border-top: 3px solid white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 3px solid white;
 }
 
 #quit {
-	width: 48%;
-	display: inline-block;
-	padding: 5px;	
+    width: 48%;
+    display: inline-block;
+    padding: 5px;	
 }
 
 #quit:hover {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .gamescreen {
-	position: absolute;
-	width: 100%;
-	height: 65vh;
+    position: absolute;
+    width: 100%;
+    height: 65vh;
 }
 
 #sheets {
-	width: 60%;
+    width: 60%;
 }
 
 #navbar_sheets {
-	width: 48%;
-	display: inline-block;
-	padding: 5px;
+    width: 48%;
+    display: inline-block;
+    padding: 5px;
 }
 
 #navbar_sheets:hover {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .ocarina_staff_div {
-	position: absolute;
-	width: 100%;
-	left: 0;
-	bottom: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
 }
 
 .ocarina_staff {
-	width: 100%;
+    width: 100%;
 }
