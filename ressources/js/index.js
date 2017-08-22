@@ -94,6 +94,41 @@ function display_sheets_harp() {
 
 //Instruments
 
+function test_song() {
+    if (song[0] === "down" && song[1] === "right" && song[2] === "left" &&
+        song[3] === "down" && song[4] === "right" && song[5] === "left" && i === 6) {
+        var audio = new Audio("ressources/audio/z5_ChantSaria.mp3");
+        audio.play();
+    }
+    else if (song[0] === "left" && song[1] === "up" && song[2] === "right" &&
+        song[3] === "left" && song[4] === "up" && song[5] === "right" && i === 6) {
+        var audio = new Audio("ressources/audio/z5_BerceuseZelda.mp3");
+        audio.play();
+    }
+    else if (song[0] === "right" && song[1] === "down" && song[2] === "up" &&
+        song[3] === "right" && song[4] === "down" && song[5] === "up" && i === 6) {
+        var audio = new Audio("ressources/audio/z5_ChantSoleil.mp3");
+        audio.play();
+    }
+    else if (song[0] === "a" && song[1] === "down" && song[2] === "up" &&
+        song[3] === "a" && song[4] === "down" && song[5] === "up" && i === 6) {
+        var audio = new Audio("ressources/audio/z5_ChantTempetes.mp3");
+        audio.play();
+    }
+    else if (song[0] === "right" && song[1] === "a" && song[2] === "down" &&
+        song[3] === "right" && song[4] === "a" && song[5] === "down" && i === 6) {
+        var audio = new Audio("ressources/audio/z5_ChantTemps.mp3");
+        audio.play();
+    }
+    else if (song[0] === "up" && song[1] === "left" && song[2] === "right" &&
+        song[3] === "up" && song[4] === "left" && song[5] === "right" && i === 6) {
+        var audio = new Audio("ressources/audio/z5_ChantEpona.mp3");
+        audio.play();
+    }
+    if (i > 5)
+        i = 0;
+}
+
 function play_ocarina(event) {
     if (event.defaultPrevented) {
         return;
@@ -104,7 +139,6 @@ function play_ocarina(event) {
             audio.play();
             song[i] = "down";
             i++;
-            console.log("down");
             test_song();
             break;
         case "ArrowUp":
@@ -112,7 +146,6 @@ function play_ocarina(event) {
             audio.play();
             song[i] = "up";
             i++;
-            console.log("up");
             test_song();
             break;
         case "ArrowLeft":
@@ -120,7 +153,6 @@ function play_ocarina(event) {
             audio.play();
             song[i] = "left";
             i++;
-            console.log("left");
             test_song();
             break;
         case "ArrowRight":
@@ -128,7 +160,6 @@ function play_ocarina(event) {
             audio.play();
             song[i] = "right";
             i++;
-            console.log("right");
             test_song();
             break;
         case " ":
@@ -136,7 +167,6 @@ function play_ocarina(event) {
             audio.play();
             song[i] = "a";
             i++;
-            console.log("a");
             test_song();
             break;
         default:
@@ -194,54 +224,6 @@ function harp() {
         "</div>";
 }
 
-function test_song() {
-    if (song[0] == "down" && song[1] == "right" && song[2] == "left" &&
-        song[3] == "down" && song[4] == "right" && song[5] == "left" && i == 6)
-    {
-        var audio = new Audio("ressources/audio/z5_ChantSaria.mp3");
-        audio.play();
-        console.log("Saria's song");
-    }
-    else if (song[0] == "left" && song[1] == "up" && song[2] == "right" && 
-        song[3] == "left" && song[4] == "up" && song[5] == "right" && i == 6)
-    {
-        var audio = new Audio("ressources/audio/z5_BerceuseZelda.mp3");
-        audio.play();
-        console.log("Zelda's Lullaby");
-    }
-    else if (song[0] == "right" && song[1] == "down" && song[2] == "up" && 
-        song[3] == "right" && song[4] == "down" && song[5] == "up" && i == 6)
-    {
-        var audio = new Audio("ressources/audio/z5_ChantSoleil.mp3");
-        audio.play();
-        console.log("Sun's Song");
-    }
-    else if (song[0] == "a" && song[1] == "down" && song[2] == "up" && 
-        song[3] == "a" && song[4] == "down" && song[5] == "up" && i == 6)
-    {
-        var audio = new Audio("ressources/audio/z5_ChantTempetes.mp3");
-        audio.play();
-        console.log("Song of Storms");
-    }
-    else if (song[0] == "right" && song[1] == "a" && song[2] == "down" && 
-        song[3] == "right" && song[4] == "a" && song[5] == "down" && i == 6)
-    {
-        var audio = new Audio("ressources/audio/z5_ChantTemps.mp3");
-        audio.play();
-        console.log("Song of Time");
-    }
-    else if (song[0] == "up" && song[1] == "left" && song[2] == "right" && 
-        song[3] == "up" && song[4] == "left" && song[5] == "right" && i == 6)
-    {
-        var audio = new Audio("ressources/audio/z5_ChantEpona.mp3");
-        audio.play();
-        console.log("Epona's Song");
-    }
-    if (i > 5)
-        i = 0;
-}
-
 function reset() {
     i = 0;
-    console.log("Reset !");
 }
